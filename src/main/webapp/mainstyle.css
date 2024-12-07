@@ -1,0 +1,278 @@
+/* General reset and layout */
+body {
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* Prevents unwanted scrollbars */
+    transition: margin-left 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #F29F58	;
+    color: white;
+    position: fixed;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow-y: auto;
+}
+
+/* Collapsed sidebar */
+.sidebar.collapsed {
+    width: 80px;
+    padding: 10px;
+}
+
+/* Sidebar logo */
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar.collapsed img {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s, padding-left 0.3s, opacity 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+    padding-left: 20px;
+}
+
+.sidebar a.active {
+    background-color: #34495e;
+    font-weight: bold;
+}
+
+/* Collapsed sidebar links */
+.sidebar.collapsed a {
+    padding-left: 10px;
+}
+
+/* Toggle button */
+.sidebar .toggle-btn {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .toggle-btn:hover {
+    background-color: #34495e;
+}
+
+/* Main content area */
+main {
+    flex-grow: 1; /* Takes up the remaining space */
+    margin-left: 250px; /* Space for sidebar */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: margin-left 0.3s ease;
+}
+
+/* Adjust main content for collapsed sidebar */
+.sidebar.collapsed + main {
+    margin-left: 80px; /* Adjusted for smaller sidebar */
+}
+
+/* Home container */
+main.home-container {
+    width: 100%;
+    height: calc(100vh - 20px); /* Adjust for padding */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+/* Welcome section */
+.welcome {
+    width: 100%;
+    max-width: 900px;
+    background: #F29F58;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.welcome h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+}
+
+/* Quick links */
+.quick-links {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+}
+
+.quick-links h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #F29F58;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 20px);
+    background: #ffffff;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: #F29F58;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #F29F58;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* Stats section */
+.stats {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.stats h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #F29F58;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.stat-item {
+    background: white;
+    border: 1px solid #ecf0f1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    color: #F29F58;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    color: #F29F58;
+    margin-bottom: 5px;
+}
+/* Announcements Section */
+.announcements {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.announcements h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #F29F58;
+}
+
+/* Announcement Rows Container */
+.announcement-row {
+    display: flex;
+    flex-direction: column; /* Align announcements vertically */
+    gap: 20px;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+}
+
+/* Single Announcement Item */
+.announcement-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #F29F58;
+}
+
+/* Icon for the Announcement */
+.announcement-item i {
+    font-size: 2.5rem;
+    color: #F29F58;
+    margin-right: 20px;
+}
+
+

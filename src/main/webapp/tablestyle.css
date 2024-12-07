@@ -1,0 +1,153 @@
+/* Reset some basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+/* Main content layout */
+.main-content {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Student info container */
+.student-info-container {
+    padding: 20px;
+}
+
+/* Styling each info block */
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.info span {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Styling for the values displayed */
+.info span + span {
+    font-weight: normal;
+    color: #333;
+}
+
+/* Last info item without border */
+.info:last-child {
+    border-bottom: none;
+}
+
+/* Center the form container */
+.form-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+/* Form heading */
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Table layout for form fields */
+form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+form td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+form label {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Input fields styling */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #4a90e2; /* Highlight color on focus */
+}
+
+/* Gender radio buttons */
+input[type="radio"] {
+    margin: 0 5px 0 0;
+}
+
+/* Button styling */
+.button-container {
+    text-align: center;
+    padding-top: 10px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"] {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+input[type="reset"] {
+    background-color: #f44336;
+    color: #fff;
+}
+
+input[type="submit"]:hover {
+    background-color: #357ab7;
+}
+
+input[type="reset"]:hover {
+    background-color: #d32f2f;
+}
