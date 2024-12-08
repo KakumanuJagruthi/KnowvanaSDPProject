@@ -10,14 +10,31 @@ import java.util.List;
 
 @Service
 public class CourseServiceImpl implements CourseService {
+	
+	@Autowired
+	private CourseRepository courseRepository;
 
-    @Autowired
-    private CourseRepository courseRepository;
+	@Override
+	public String AddCourse(Course course) {
+		courseRepository.save(course);
+		return "Course Added Successfully!";
+	}
 
-    @Override
-    public String CourseRegistration(Course course) {
-      courseRepository.save(course);
-      return "Created a new Course"+course.getName()+"Successfully !!";
-    }
+	@Override
+	public List<Course> ViewAllCourses() {
+		return (List<Course>) courseRepository.findAll();
+	}
 
+	@Override
+	public Course ViewCourseByID(int courseid) {
+		return courseRepository.findById(courseid).get();
+	}
+
+	@Override
+public List<Course> viewallcoursesbycategory(String category) {
+		return courseRepository.viewallcoursesbycategory(category);
+	}
+	
+
+   
 }

@@ -15,6 +15,8 @@
                 <li><a href="studhome">Home</a></li>
                 <li><a href="studprofile">My Profile</a></li>
                 <li><a href="updatestud">Update Profile</a></li>
+                <li><a href="viewallcoursesstud">View Courses</a></li>
+                <li><a href="savedcourses">Saved Courses</a></li>
                 <li><a href="studlogout">Logout</a></li>
             </ul>
         </nav>

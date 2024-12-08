@@ -47,29 +47,12 @@ public class EducatorServiceImpl implements EducatorService
 		
 		return studentRepository.count();
 	}
-	public String assignCourseToStudent(int studentId, int courseId) {
-	    // Fetch the student and course by their IDs
-	    Student student = studentRepository.findById(studentId).orElse(null);
-	    Course course = courseRepository.findById(courseId).orElse(null);
-	    
-	    if (student != null && course != null) {
-	        // Assuming there's a ManyToMany relationship between Student and Course
-	        student.getEnrolledCourses().add(course);
-	        studentRepository.save(student); // Save the updated student
-	        
-	        return "Course successfully assigned to the student.";
-	    } else {
-	        return "Student or Course not found.";
-	    }
-	}
+	
 	public List<Student> getAllStudents() {
 	    return studentRepository.findAll(); // Get all students from the database
 	}
 
-	public List<Course> getAllCourses() {
-	    return courseRepository.findAll(); // Get all courses from the database
-	}
-
+	
 
 	
 

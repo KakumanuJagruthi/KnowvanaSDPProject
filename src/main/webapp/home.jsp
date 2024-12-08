@@ -127,7 +127,7 @@
                     <i class="fa fa-chalkboard-teacher"></i>
                     <h3>Educator Login</h3>
                 </a>
-                <a href="courses" class="card">
+                <a href="viewallcourses" class="card">
                     <i class="fa fa-book"></i>
                     <h3>Courses</h3>
                 </a>

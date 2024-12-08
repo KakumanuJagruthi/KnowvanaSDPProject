@@ -17,9 +17,7 @@
                 <li><a href="deletestud">Delete Student Record</a></li>
                 <li><a href="viewallcourses">View All Courses</a></li> <!-- View All Courses -->
                 <li><a href="addcourse">Add New Course</a></li> <!-- Add New Course -->
-                <li><a href="assignstudents">Assign Students to Courses</a></li> <!-- Assign Students to Courses -->
-                <li><a href="viewenrollments">View Student Enrollments</a></li> <!-- View Student Enrollments -->
-                <li><a href="editcourse">Edit Course Details</a></li> <!-- Edit Course Details -->
+                
                 <li><a href="edulogout">Logout</a></li>
             </ul>
         </nav>

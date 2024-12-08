@@ -20,6 +20,7 @@
         <a href="studreg"><i class="fa fa-user-plus"></i> Student Registration</a>
         <a href="studlogin"><i class="fa fa-sign-in"></i> Student Login</a>
         <a href="edulogin"><i class="fa fa-chalkboard-teacher"></i> Educator Login</a>
+        <a href="feedback"><i class="fa fa-chalkboard-teacher"></i> Feedback</a>
         
         <button class="toggle-btn" onclick="toggleSidebar()">&#9664;</button>
     </div>

@@ -1,7 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
-
+<%@ page import="com.klef.jfsd.springboot.model.Student"%>
 <%@ taglib uri="jakarta.tags.core" prefix="c" %>
+<%
+    Student s = (Student) session.getAttribute("student");
+    if (s == null) {
+        response.sendRedirect("studsession");
+        return;
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -114,7 +121,7 @@
 
 <body>
 
-<%@ include file="edunavbar.jsp" %>
+<%@ include file="studnavbar.jsp" %>
 
 <h3><u>View All Courses</u></h3>
 
@@ -135,7 +142,7 @@
             <p><strong>Cost:</strong> <c:out value="${course.cost}"></c:out></p>
 
             <!-- Link to course -->
-            <a href='<c:url value="${course.url}"></c:url>' target="_blank">Click Here To Access The Course</a>
+            <a href="/saved">Save To My Courses</a>
         </div>
     </c:forEach>
 </div>

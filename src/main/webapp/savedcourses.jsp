@@ -116,28 +116,28 @@
 
 <%@ include file="edunavbar.jsp" %>
 
-<h3><u>View All Courses</u></h3>
+<h3><u>View All Saved Courses</u></h3>
 
 <!-- Input to filter courses -->
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter Course Name">
 
 <!-- Course Container -->
 <div id="courseContainer">
-    <c:forEach items="${courselist}" var="course">
-        <div class="courseCard">
-            <!-- Image Display -->
-            <img src="displaycourseimage?id=${course.id}" alt="Course Image">
+    <c:forEach items="${courselist}" var="course" varStatus="status" begin="0" end="1">
+    <div class="courseCard">
+        <!-- Image Display -->
+        <img src="displaycourseimage?id=${course.id}" alt="Course Image">
 
-            <!-- Course Details -->
-            <h4><c:out value="${course.name}"></c:out></h4>
-            <p><strong>Category:</strong> <c:out value="${course.category}"></c:out></p>
-            <p><strong>Description:</strong> <c:out value="${course.description}"></c:out></p>
-            <p><strong>Cost:</strong> <c:out value="${course.cost}"></c:out></p>
-
-            <!-- Link to course -->
-            <a href='<c:url value="${course.url}"></c:url>' target="_blank">Click Here To Access The Course</a>
-        </div>
-    </c:forEach>
+        <!-- Course Details -->
+        <h4><c:out value="${course.name}"></c:out></h4>
+        <p><strong>Category:</strong> <c:out value="${course.category}"></c:out></p>
+        <p><strong>Description:</strong> <c:out value="${course.description}"></c:out></p>
+        <p><strong>Cost:</strong> <c:out value="${course.cost}"></c:out></p>
+        <!-- Link to course -->
+        <a href='<c:url value="${course.url}"></c:url>' target="_blank">Click Here To Access The Course</a>
+    </div>
+</c:forEach>
+    
 </div>
 
 </body>

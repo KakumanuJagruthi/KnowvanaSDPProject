@@ -12,8 +12,6 @@ public interface EducatorService
 	  public Educator checkeducatorlogin(String uname,String pwd);
 	  public String deletestud(int sid);
 	  public long studcount();
-	public String assignCourseToStudent(int studentId, int courseId);
 	public List<Student> getAllStudents();
-	public List<Course> getAllCourses();
 
 }

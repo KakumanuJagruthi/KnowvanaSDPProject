@@ -119,21 +119,13 @@
         <section class="quick-links">
             <h2>Quick Links</h2>
             <div class="cards">
-                <a href="view_courses" class="card">
+                <a href="viewallcourses" class="card">
                     <i class="fa fa-book"></i>
                     <h3>Your Courses</h3>
                 </a>
-                <a href="manage_assignments" class="card">
-                    <i class="fa fa-tasks"></i>
-                    <h3>Manage Assignments</h3>
-                </a>
-                <a href="student_profiles" class="card">
+                <a href="viewallstud" class="card">
                     <i class="fa fa-user"></i>
                     <h3>Student Profiles</h3>
-                </a>
-                <a href="exam_schedule" class="card">
-                    <i class="fa fa-calendar"></i>
-                    <h3>Upcoming Exams</h3>
                 </a>
             </div>
         </section>

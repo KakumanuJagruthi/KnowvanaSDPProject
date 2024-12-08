@@ -1,8 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Create Course</title>
-    <link rel="stylesheet" type="text/css" href="tablestyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         .error-message {
             color: red;
@@ -66,55 +71,45 @@
             color : #F29F58;
         }
     </style>
-    <script>
-        // Form validation (if necessary)
-        function validateForm(event) {
-            // You can add any custom validation here if needed
-            // For now, this just prevents form submission if a field is missing
-        }
-    </script>
 </head>
 <body>
-    <%@include file="edunavbar.jsp" %>
+<%@include file="edunavbar.jsp" %>
+<main>
+<div class="form-container">
+    <h2><u>Add New Assignment</u></h2>
 
-    <main>
-        <div class="form-container">
-            <h3><u>Create Course</u></h3>
-            <form method="post" action="insertcourse" enctype="multipart/form-data" onsubmit="validateForm(event)">
-                <table>
-                    <tr>
-                        <td><label for="category">Course Category</label></td>
-                        <td><input type="text" id="category" name="category" required /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="name">Course Name</label></td>
-                        <td><input type="text" id="name" name="name" required /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="description">Course Description</label></td>
-                        <td><textarea id="description" name="description" rows="4" required></textarea></td>
-                    </tr>
-                    <tr>
-                        <td><label for="cost">Course Cost</label></td>
-                        <td><input type="number" id="cost" name="cost" step="0.01" required /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="url">Course URL</label></td>
-                        <td><input type="url" id="url" name="url" required /></td>
-                    </tr>
-                    <tr>
-                        <td><label for="image">Course Image (JPG/PNG)</label></td>
-                        <td><input type="file" id="image" name="image" accept="image/*" required /></td>
-                    </tr>
-                    <tr>
+    <form action="/insertassignment" method="POST" enctype="multipart/form-data">
+        <table>
+        	<tr>
+        		<td><label for="title">Assignment Title</label></td>
+        		<td><input type="text" id="title" name="title" required placeholder="Enter assignment title"></td>
+        	</tr>
+        	<tr>
+        		<td><label for="description">Description</label></td>
+        		<td><textarea id="description" name="description" required placeholder="Enter assignment description"></textarea></td>
+        	</tr>
+        	<tr>
+        		<td><label for="dueDate">Due Date</label></td>
+        		<td><input type="date" id="dueDate" name="dueDate" required></td>
+        	</tr>
+        	<tr>
+        		<td><label for="courseId">Course ID</label></td>
+        		<td><input type="number" id="courseId" name="courseId" required placeholder="Enter the course ID"></td>
+        	</tr>
+        	<tr>
+        		<td><label for="pdfFile">Upload Assignment PDF</label></td>
+        		<td><input type="file" id="pdfFile" name="pdfFile" accept="application/pdf" required></td>
+        	</tr>
+        	<tr>
                         <td colspan="2" class="button-container">
-                            <input type="submit" value="Create Course"/>
+                            <input type="submit" value="Add Assignment"/>
                             <input type="reset" value="Clear"/>
                         </td>
                     </tr>
-                </table>
-            </form>
-        </div>
-    </main>
+        	
+        </table>
+    </form>
+</div>
+</main>
 </body>
 </html>

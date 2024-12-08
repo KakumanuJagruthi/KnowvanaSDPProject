@@ -126,15 +126,11 @@
         <section class="quick-links">
             <h2>Quick Links</h2>
             <div class="cards">
-                <a href="view_courses" class="card">
+                <a href="viewallcoursesstud" class="card">
                     <i class="fa fa-book"></i>
                     <h3>Your Courses</h3>
                 </a>
-                <a href="view_assignments" class="card">
-                    <i class="fa fa-tasks"></i>
-                    <h3>Assignments</h3>
-                </a>
-                <a href="profile" class="card">
+                <a href="studprofile" class="card">
                     <i class="fa fa-user"></i>
                     <h3>Your Profile</h3>
                 </a>

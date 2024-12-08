@@ -17,9 +17,7 @@ public class Educator {
     @Column(name = "educator_email", nullable = false, unique = true, length = 50)
     private String email;
     
-    // One-to-many relationship with Course
-    @OneToMany(mappedBy = "educator", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Course> courses;
+  
 
     // Getters and Setters
     public String getUsername() {
@@ -40,10 +38,5 @@ public class Educator {
     public void setEmail(String email) {
         this.email = email;
     }
-    public List<Course> getCourses() {
-        return courses;
-    }
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
+   
 }

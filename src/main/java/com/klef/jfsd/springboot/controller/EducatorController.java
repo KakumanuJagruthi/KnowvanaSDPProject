@@ -1,6 +1,6 @@
 package com.klef.jfsd.springboot.controller;
 
-import java.sql.Blob;
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,13 +8,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.klef.jfsd.springboot.model.Course;
+import com.klef.jfsd.springboot.model.Assignment;
 import com.klef.jfsd.springboot.model.Educator;
 import com.klef.jfsd.springboot.model.Student;
-import com.klef.jfsd.springboot.service.CourseService;
+import com.klef.jfsd.springboot.service.AssignmentService;
 import com.klef.jfsd.springboot.service.EducatorService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -24,32 +25,10 @@ public class EducatorController {
 
     @Autowired
     private EducatorService educatorService;
-
-    @Autowired
-    private CourseService courseService;
-
-    @GetMapping("assigncourse")
-    public ModelAndView assignCourseToStudent(@RequestParam("studentId") int studentId,
-                                               @RequestParam("courseId") int courseId) {
-        ModelAndView mv = new ModelAndView();
-        String result = educatorService.assignCourseToStudent(studentId, courseId);
-        mv.addObject("message", result);
-        mv.setViewName("assigncourse");
-        return mv;
-    }
-
-    @GetMapping("viewassign")
-    public ModelAndView viewAssignPage() {
-        ModelAndView mv = new ModelAndView();
-        List<Student> students = educatorService.getAllStudents();
-        List<Course> courses = educatorService.getAllCourses();
-        mv.addObject("students", students);
-        mv.addObject("courses", courses);
-        mv.setViewName("assigncourse");
-        return mv;
-    }
-
     
+    @Autowired
+    private AssignmentService assignmentService;
+
     @GetMapping("edulogin")
     public ModelAndView edulogin() {
         ModelAndView mv = new ModelAndView();
@@ -125,4 +104,14 @@ public class EducatorController {
         mv.setViewName("edulogin");
         return mv;
     }
+    
+    @GetMapping("addassignment")
+    public ModelAndView addcoursedemo()
+    {
+ 	   ModelAndView mv = new ModelAndView("addassignment");
+ 	   return mv;
+    }
+    	
+    
+
 }
