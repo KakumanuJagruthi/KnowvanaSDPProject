@@ -98,7 +98,7 @@
                 <td><c:out value="${stud.contact}"/></td>
                 <td><c:out value="${stud.status}"/></td>
                 <td>
-                    <a href='<c:url value="delete?id=${stud.id}"></c:url>'>Delete</a><i class="fas fa-trash-alt trash-icon"></i>
+<a href='<c:url value="delete?id=${stud.id}"></c:url>' onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
                 </td>
             </tr>
         </c:forEach>

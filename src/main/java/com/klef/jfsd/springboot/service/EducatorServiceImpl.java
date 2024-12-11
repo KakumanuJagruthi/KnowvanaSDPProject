@@ -48,9 +48,10 @@ public class EducatorServiceImpl implements EducatorService
 		return studentRepository.count();
 	}
 	
-	public List<Student> getAllStudents() {
-	    return studentRepository.findAll(); // Get all students from the database
-	}
+	/*
+	 * public List<Student> getAllStudents() { return studentRepository.findAll();
+	 * // Get all students from the database }
+	 */
 
 	
 
